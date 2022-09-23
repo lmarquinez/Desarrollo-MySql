@@ -13,6 +13,6 @@ SET @client = 'Laura'; #nombre del cliente por el que se quiera filtrar
 SELECT l.name as 'Restaurant', l.phone AS 'Contact',  l.name_responsible AS 'Owner', 
 	c.name as 'Client', c.phone AS 'Client number', c.email AS 'Client email'
 FROM restaurants.favorites AS f 
-	JOIN restaurants.locals AS l ON f.fk_local = l.idlocal 
-    JOIN restaurants.clients AS c ON f.fk_client = c.idclient
+	INNER JOIN restaurants.locals AS l ON f.fk_local = l.idlocal 
+    INNER JOIN restaurants.clients AS c ON f.fk_client = c.idclient
 WHERE c.name = @client COLLATE utf8mb4_unicode_ci;
