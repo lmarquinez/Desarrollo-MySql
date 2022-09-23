@@ -15,4 +15,4 @@ SELECT l.name as 'Restaurant', l.phone AS 'Contact',  l.name_responsible AS 'Own
 FROM restaurants.favorites AS f 
 	JOIN restaurants.locals AS l ON f.fk_local = l.idlocal 
     JOIN restaurants.clients AS c ON f.fk_client = c.idclient
-WHERE c.name = @client COLLATE utf8mb4_general_ci;
+WHERE c.name = @client COLLATE utf8mb4_unicode_ci;
