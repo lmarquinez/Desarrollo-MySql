@@ -5,7 +5,7 @@ USE restaurants;
 SET @local = 4; #id del local por el que se quiera filtrar
 SELECT t.number_table AS 'Table Nº', c.name AS 'Booked name' 
 FROM restaurants.tables AS t, restaurants.clients AS c 
-WHERE t.isAvailable = 0 AND t.fk_client = c.idclient AND t.fk_local = @local;
+WHERE t.fk_client = c.idclient AND t.isAvailable = 0 AND t.fk_local = @local;
 
 #QUERY 2
 #Todos los locales marcados como favorito por un cliente, incluyendo la información del local y del cliente:
